@@ -7,7 +7,7 @@ const Navbar = () => {
     <AppBar position="static" sx={{ backgroundColor: '#3f51b5' }}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          My App
+          Vrs Security
         </Typography>
         <Button color="inherit" component={Link} to="/" sx={{ marginLeft: 2 }}>
           Dashboard

@@ -7,6 +7,9 @@ const AddUserPage = () => {
   const [success, setSuccess] = useState(false); // State for success alert
   const navigate = useNavigate();
 
+  // Predefined roles
+  const roles = ['Admin', 'Editor', 'Viewer', 'Manager', 'Employee'];
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -53,11 +56,22 @@ const AddUserPage = () => {
           <Grid item xs={12}>
             <TextField
               label="Role"
+              select
               fullWidth
               value={user.role}
               onChange={(e) => setUser({ ...user, role: e.target.value })}
+              SelectProps={{ native: true }}
               required
-            />
+            >
+              <option value="" disabled>
+                Select a role
+              </option>
+              {roles.map((role, index) => (
+                <option key={index} value={role}>
+                  {role}
+                </option>
+              ))}
+            </TextField>
           </Grid>
           <Grid item xs={12}>
             <TextField
